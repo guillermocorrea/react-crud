@@ -29,6 +29,16 @@ class EmployeeService {
     });
   }
 
+  async delete(id) {
+    return await fetch(baseUrl + `/${id}`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'DELETE'
+    });
+  }
+
   async getById(id) {
     return await fetch(baseUrl + `/${id}`)
       .then(res => res.json())

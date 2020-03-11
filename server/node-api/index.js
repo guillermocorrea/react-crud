@@ -23,7 +23,9 @@ router.use((req, res, next) => {
 router
   .route('/employee')
   .get((req, res) => {
-    res.json({ data: store.getAll() });
+    setTimeout(() => {
+      res.json({ data: store.getAll() });
+    }, 2500);
   })
   .post((req, res) => {
     res.json({ data: store.add(req.body) });
@@ -39,7 +41,6 @@ router
     res.json({ data: emp });
   })
   .put((req, res) => {
-      debugger
     const emp = { ...req.body, id: parseInt(req.params.id) };
     res.json(store.edit(emp));
   })

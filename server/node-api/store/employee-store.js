@@ -16,7 +16,6 @@ class EmployeeStore {
   }
 
   edit(employee) {
-      debugger
     const index = employees.findIndex(e => e.id === employee.id);
     if (index === -1) throw 'Employee not found';
     employees[index] = employee;

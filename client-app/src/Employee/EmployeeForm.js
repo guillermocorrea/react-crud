@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Segment, Form, Radio, Button, Message } from 'semantic-ui-react';
 import EmployeeService from '../services/employee';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const emptyEmployee = {
   firstName: '',
@@ -121,6 +121,7 @@ const EmployeeForm = () => {
           </Button>
         </Form>
       </Segment>
+      <Link to='/'>Go back to the list</Link>
     </Fragment>
   );
 };
